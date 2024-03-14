@@ -62,7 +62,7 @@ class S3D_backbone(torch.nn.Module):
         else:
             branch = 'pose'
         
-        self.pyramid = None
+        self.pyramid = None 
         self.num_levels = 3
         if cfg_pyramid is not None:
             if cfg_pyramid[branch]:
