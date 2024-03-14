@@ -127,7 +127,7 @@ def load_video(zip_file, name, num_frames, transform_cfg, dataset_name, is_train
         tmin, tmax = transform_cfg['temporal_augmentation']['tmin'], transform_cfg['temporal_augmentation']['tmax']
     else:
         tmin, tmax = 1, 1
-    if dataset_name.lower() in ['csl-daily', 'phoenix-2014t', 'phoenix-2014']: 
+    if dataset_name.lower() in ['csl-daily', 'phoenix-2014t', 'phoenix-2014', 'vsl-edu']: 
         if dataset_name.lower()=='csl-daily':
             image_path_list = ['{}@sentence_frames-512x512/{}/{:06d}.jpg'.format(zip_file, name, fi)
                 for fi in range(num_frames)]

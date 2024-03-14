@@ -86,6 +86,7 @@ class S3D_backbone(torch.nn.Module):
             try: self.load_state_dict(state_dict)
             except: neq_load_customized(self, state_dict, verbose=True)
         elif 'glosscls' in model_path:
+            print(f"model_path: {model_path}")
             filename = glob.glob(os.path.join(model_path, '*.pth.tar'))
             checkpoint = torch.load(filename[0], map_location='cpu')
             state_dict = checkpoint['state_dict']
