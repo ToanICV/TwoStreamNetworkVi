@@ -45,7 +45,8 @@ def get_selected_indexs(vlen, tmin=1, tmax=1, num_tokens=1, max_num_frames=400):
 def read_img(path, dataset_name, csl_cut, csl_resize=-1):
     zip_data = ZipReader.read(path)
     rgb_im = Image.open(io.BytesIO(zip_data)).convert('RGB')    
-    if dataset_name.lower() == 'csl-daily': 
+    # if dataset_name.lower() == 'csl-daily': 
+    if dataset_name.lower() == 'vsl-edu': 
         if csl_cut:
             rgb_im = rgb_im.crop((0,80,512,512))
         if csl_resize!=-1:
@@ -139,7 +140,7 @@ def load_video(zip_file, name, num_frames, transform_cfg, dataset_name, is_train
                 for fi in range(num_frames)]
         elif dataset_name.lower()=='vsl-edu':
             image_path_list = ['{}@images/{}/{:06d}.jpg'.format(zip_file, name, fi)
-                for fi in range(num_frames)]
+                for fi in range(1,num_frames)]
         else:
             raise ValueError  
         selected_indexs, valid_len = get_selected_indexs(len(image_path_list), tmin=tmin, tmax=tmax)
