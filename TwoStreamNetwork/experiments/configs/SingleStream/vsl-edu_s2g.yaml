@@ -1,16 +1,16 @@
 task: S2G
 data:
   input_data: videos #features, gloss
-  zip_file: /content/csl-daily-videos.zip
+  zip_file: /kaggle/working/vsl-edu.zip
   input_streams:
     - rgb  
-  dataset_name: csl-daily
+  dataset_name: vsl-edu
   level: word #word or char
   txt_lowercase: true
   max_sent_length: 400
-  train: /content/csl-daily.train 
-  dev: /content/csl-daily.dev
-  test: /content/csl-daily.test
+  train: /kaggle/input/vsl-edu-labels/myVSL.train
+  dev: /kaggle/input/vsl-edu-labels/myVSL.dev
+  test: /kaggle/input/vsl-edu-labels/myVSL.test
   transform_cfg:
     img_size: 224
     aug_hflip: false
@@ -35,7 +35,7 @@ testing:
 training:
   random_seed: 44
   overwrite: True
-  model_dir: experiments/outputs/SingleStream/csl-daily_s2g
+  model_dir: experiments/outputs/SingleStream/vsl-edu_s2g
   shuffle: True
   num_workers: 4
   batch_size: 1 
@@ -60,7 +60,7 @@ training:
 model:
   RecognitionNetwork:
     GlossTokenizer:
-      gloss2id_file: data/csl-daily/gloss2ids.pkl
+      gloss2id_file: data/vsl-edu/gloss2ids.pkl
     s3d:
       pretrained_ckpt: pretrained_models/s3ds_glosscls_ckpt
       use_block: 4

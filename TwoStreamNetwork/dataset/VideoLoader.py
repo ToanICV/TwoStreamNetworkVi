@@ -137,6 +137,9 @@ def load_video(zip_file, name, num_frames, transform_cfg, dataset_name, is_train
         elif dataset_name.lower()=='phoenix-2014':
             image_path_list = ['{}@{}.avi_pid0_fn{:06d}-0.png'.format(zip_file, name, fi)
                 for fi in range(num_frames)]
+        elif dataset_name.lower()=='vsl-edu':
+            image_path_list = ['{}@images/{}/{:06d}.jpg'.format(zip_file, name, fi)
+                for fi in range(num_frames)]
         else:
             raise ValueError  
         selected_indexs, valid_len = get_selected_indexs(len(image_path_list), tmin=tmin, tmax=tmax)
