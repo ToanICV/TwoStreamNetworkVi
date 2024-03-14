@@ -60,7 +60,7 @@ training:
 model:
   RecognitionNetwork:
     GlossTokenizer:
-      gloss2id_file: data/vsl-edu/gloss2ids.pkl
+      gloss2id_file: /kaggle/input/vsl-edu-labels/gloss2ids_vsl.pkl
     s3d:
       pretrained_ckpt: pretrained_models/s3ds_glosscls_ckpt
       use_block: 4

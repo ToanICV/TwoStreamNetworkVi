@@ -262,8 +262,8 @@ dependencies:
   - soupsieve==2.3.1
   - tabulate==0.8.9
   - tensorboard
-  - tensorboard
-  - tensorboard
+  - tensorboard-data-server
+  - tensorboard-plugin-wit
   - tensorflow==2.2.0
   - tensorflow-estimator==2.2.0
   - termcolor==1.1.0
