@@ -24,7 +24,7 @@ testing:
       num_beams: 5
 training:
   batch_size: 8
-  keep_last_ckpts: 5
+  keep_last_ckpts: 1
   model_dir: experiments/outputs/SingleStream/vsl-edu_s2t
   num_workers: 4
   optimization:
