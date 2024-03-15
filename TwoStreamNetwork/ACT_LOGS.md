@@ -14,7 +14,7 @@
 
 ### Training thử với Single Stream trước: (vì không cần dùng keypoint & chênh lệch BLEU + ROUGE ko quá 5%)
 #### TODOs:
-    1. [x] Export gloss from text.
+    1. [x] Export gloss from text: https://colab.research.google.com/drive/11NdMrUN6pdOAWm84fH_EnjREDw37Bk52?authuser=1#scrollTo=Jk8GGVOuz4fq&uniqifier=1
         Format: {
                     "name": <video name without extension>,
                     "signer": <number>,
@@ -23,8 +23,10 @@
                     "num_frames": <number>,
                     "sign": tensor([[0.]])
                 }
-    2. [x] Build mapping gloss vs ID table.
+    2. [x] Build mapping gloss vs ID table: https://colab.research.google.com/drive/11NdMrUN6pdOAWm84fH_EnjREDw37Bk52?authuser=1#scrollTo=Jk8GGVOuz4fq&uniqifier=1
     3. [x] Configure yaml file.
     4. [x] Tách video -> ảnh.
-    5. [ ] Download needed pretrain model for training SLT.
-    6. [ ] Training.
+    5. [x] Download needed pretrain model for training SLT: 
+            Link: https://hkustconnect-my.sharepoint.com/personal/rzuo_connect_ust_hk/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Frzuo%5Fconnect%5Fust%5Fhk%2FDocuments%2Fpretrained%5Fmodels&ga=1
+    6. [ ] Training on Kaggle: https://www.kaggle.com/code/toandaoicv/singlestreamsignlanguagetranslation/edit/run/166821736
+        6.1. [x] Prune mBART Embedding & Add Gloss Embeddings:https://colab.research.google.com/drive/11NdMrUN6pdOAWm84fH_EnjREDw37Bk52?authuser=1#scrollTo=MSQ7zkGsjksC&uniqifier=1

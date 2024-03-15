@@ -142,7 +142,7 @@ def evaluation(model, val_dataloader, cfg,
             elif cfg['data']['dataset_name'].lower()=='phoenix-2014':
                 gls_ref = [clean_phoenix_2014(results[n]['gls_ref']) for n in results]
                 gls_hyp = [clean_phoenix_2014(results[n][hyp_name]) for n in results] 
-            elif cfg['data']['dataset_name'].lower() in ['csl-daily','cslr']:
+            elif cfg['data']['dataset_name'].lower() in ['csl-daily','cslr','vsl-edu']:
                 gls_ref = [results[n]['gls_ref'] for n in results]
                 gls_hyp = [results[n][hyp_name] for n in results]  
             wer_results = wer_list(hypotheses=gls_hyp, references=gls_ref)

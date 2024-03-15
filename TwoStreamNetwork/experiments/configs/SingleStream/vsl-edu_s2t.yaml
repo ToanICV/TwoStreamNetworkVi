@@ -1,13 +1,13 @@
 task: S2T
 data:
-  dataset_name: csl-daily
-  zip_file: /content/csl-daily-videos.zip
-  train: /content/csl-daily.train 
-  dev: /content/csl-daily.dev
-  test: /content/csl-daily.test
-  dev_head_rgb_input: experiments/outputs/SingleStream/csl-daily_s2g/extract_feature/head_rgb_input/dev.pkl
-  test_head_rgb_input: experiments/outputs/SingleStream/csl-daily_s2g/extract_feature/head_rgb_input/test.pkl
-  train_head_rgb_input: experiments/outputs/SingleStream/csl-daily_s2g/extract_feature/head_rgb_input/train.pkl
+  dataset_name: vsl-edu
+  zip_file: /kaggle/working/vsl-edu.zip
+  train: /kaggle/input/vsl-edu-labels/myVSL.train
+  dev: /kaggle/input/vsl-edu-labels/myVSL.dev
+  test: /kaggle/input/vsl-edu-labels/myVSL.test
+  dev_head_rgb_input: /kaggle/working/TwoStreamNetworkVi/TwoStreamNetwork/experiments/outputs/SingleStream/vsl-edu_s2g/extract_feature/head_rgb_input/dev.pkl
+  test_head_rgb_input: /kaggle/working/TwoStreamNetworkVi/TwoStreamNetwork/experiments/outputs/SingleStream/vsl-edu_s2g/extract_feature/head_rgb_input/test.pkl
+  train_head_rgb_input: /kaggle/working/TwoStreamNetworkVi/TwoStreamNetwork/experiments/outputs/SingleStream/vsl-edu_s2g/extract_feature/head_rgb_input/train.pkl
   input_data: videos
   input_streams:
   - rgb
@@ -25,7 +25,7 @@ testing:
 training:
   batch_size: 8
   keep_last_ckpts: 5
-  model_dir: experiments/outputs/SingleStream/csl-daily_s2t
+  model_dir: experiments/outputs/SingleStream/vsl-edu_s2t
   num_workers: 4
   optimization:
     betas:
@@ -55,7 +55,7 @@ training:
 model:
   RecognitionNetwork:
     GlossTokenizer:
-      gloss2id_file: data/csl-daily/gloss2ids.pkl
+      gloss2id_file: /kaggle/input/vsl-edu-labels/gloss2ids_vsl.pkl
     fuse_method: empty
     gloss_feature_ensemble: gloss_probabilities
     heatmap_cfg:
@@ -82,21 +82,21 @@ model:
       pe: true
   TranslationNetwork:
     GlossEmbedding:
-      gloss2embed_file: pretrained_models/mBart_zh/gloss_embeddings.bin 
+      gloss2embed_file: /kaggle/working/TwoStreamNetworkVi/TwoStreamNetwork/pretrained_models/pretrained_models_mBart/gloss_embeddings.bin
     GlossTokenizer:
-      gloss2id_file: pretrained_models/mBart_zh/gloss2ids.pkl 
+      gloss2id_file: /kaggle/working/TwoStreamNetworkVi/TwoStreamNetwork/pretrained_models/pretrained_models_mBart/gloss2ids.pkl
       src_lang: vi_VSL
     TextTokenizer:
-      pretrained_model_name_or_path: pretrained_models/mBart_zh/ 
-      pruneids_file: pretrained_models/mBart_zh/old2new_vocab.pkl 
+      pretrained_model_name_or_path: /kaggle/working/TwoStreamNetworkVi/TwoStreamNetwork/pretrained_models/pretrained_models_mBart/
+      pruneids_file: /kaggle/working/TwoStreamNetworkVi/TwoStreamNetwork/pretrained_models/pretrained_models_mBart/map_ids.pkl
       tgt_lang: vi_VN
     freeze_txt_embed: false
     label_smoothing: 0.2
     overwrite_cfg:
       attention_dropout: 0.1
       dropout: 0.3
-    pretrained_model_name_or_path: pretrained_models/mBart_zh/ 
-    load_ckpt: experiments/outputs/SingleStream/csl-daily_g2t/ckpts/step_1000.ckpt
+    pretrained_model_name_or_path: /kaggle/working/TwoStreamNetworkVi/TwoStreamNetwork/pretrained_models/pretrained_models_mBart/ 
+    # load_ckpt: experiments/outputs/SingleStream/csl-daily_g2t/ckpts/step_1000.ckpt
   VLMapper:
     freeze: false
     type: embedding
