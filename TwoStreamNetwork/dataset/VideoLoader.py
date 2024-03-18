@@ -28,7 +28,8 @@ def get_selected_indexs(vlen, tmin=1, tmax=1, num_tokens=1, max_num_frames=400):
     try:
         selected_len = np.random.randint(min_len, max_len+1)
     except:
-        print("\n\n\n\n")
+        selected_len = np.random.randint(max_len+1, min_len)
+        print("\n\n")
         print(min_len,max_len,vlen,max_num_frames)
     if (selected_len%4) != 0:
         selected_len += (4-(selected_len%4))
