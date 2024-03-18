@@ -18,8 +18,8 @@ data:
     bottom_area: 0.7
     csl_cut: False
     csl_resize: 
-      - 320
-      - 320 
+      - 240
+      - 240 
     center_crop: true
     center_crop_size: 270
     randomcrop_threshold: 1
@@ -37,7 +37,7 @@ training:
   overwrite: True
   model_dir: experiments/outputs/SingleStream/vsl-edu_s2g
   shuffle: True
-  num_workers: 2
+  num_workers: 4
   batch_size: 1 
   total_epoch: 40
   keep_last_ckpts: 1
