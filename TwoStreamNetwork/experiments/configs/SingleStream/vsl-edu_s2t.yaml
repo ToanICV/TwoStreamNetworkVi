@@ -55,7 +55,8 @@ training:
 model:
   RecognitionNetwork:
     GlossTokenizer:
-      gloss2id_file: /kaggle/input/vsl-edu-labels/gloss2ids_vsl.pkl
+      # gloss2id_file: /kaggle/input/vsl-edu-labels/gloss2ids_vsl.pkl
+      gloss2id_file: /kaggle/working/TwoStreamNetworkVi/TwoStreamNetwork/pretrained_models/pretrained_models_mBart/gloss2ids.pkl
     fuse_method: empty
     gloss_feature_ensemble: gloss_probabilities
     heatmap_cfg:
@@ -84,6 +85,7 @@ model:
     GlossEmbedding:
       gloss2embed_file: /kaggle/working/TwoStreamNetworkVi/TwoStreamNetwork/pretrained_models/pretrained_models_mBart/gloss_embeddings.bin
     GlossTokenizer:
+      # gloss2id_file: /kaggle/input/vsl-edu-labels/gloss2ids_vsl.pkl
       gloss2id_file: /kaggle/working/TwoStreamNetworkVi/TwoStreamNetwork/pretrained_models/pretrained_models_mBart/gloss2ids.pkl
       src_lang: vi_VSL
     TextTokenizer:

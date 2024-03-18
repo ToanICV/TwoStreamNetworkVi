@@ -73,7 +73,3 @@ model:
       ff_kernelsize:
         - 3
         - 3
-
-
-
-

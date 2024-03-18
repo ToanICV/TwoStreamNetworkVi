@@ -60,7 +60,8 @@ training:
 model:
   RecognitionNetwork:
     GlossTokenizer:
-      gloss2id_file: /kaggle/input/vsl-edu-labels/gloss2ids_vsl.pkl
+      # gloss2id_file: /kaggle/input/vsl-edu-labels/gloss2ids_vsl.pkl
+      gloss2id_file: /kaggle/working/TwoStreamNetworkVi/TwoStreamNetwork/pretrained_models/pretrained_models_mBart/gloss2ids.pkl
     s3d:
       pretrained_ckpt: pretrained_models/s3ds_glosscls_ckpt
       use_block: 4
@@ -73,7 +74,3 @@ model:
       ff_kernelsize:
         - 3
         - 3
-
-
-
-
