@@ -110,7 +110,7 @@ def load_batch_video(zip_file, names, num_frames, transform_cfg, dataset_name, i
                 padded_keypoint = torch.cat([keypoints, padding], dim=0) 
                 padded_sgn_keypoints.append(padded_keypoint)                   
             else:
-                padded_sgn_keypoints.append(keypoints) 
+                padded_sgn_keypoints.append(keypoints)
 
     sgn_lengths = torch.tensor(sgn_lengths, dtype=torch.long)
     sgn_videos = torch.stack(padded_sgn_videos, dim=0) 
