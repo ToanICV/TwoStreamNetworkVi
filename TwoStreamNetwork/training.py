@@ -167,7 +167,6 @@ if __name__ == "__main__":
         scheduler.step()
         for step, batch in enumerate(train_dataloader):
             model.module.set_train()
-            print(f"\n\nbatch: {batch}")
             output = model(is_train=True, **batch)
 
             with torch.autograd.set_detect_anomaly(True):           
