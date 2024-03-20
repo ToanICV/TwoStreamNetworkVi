@@ -1,7 +1,7 @@
 task: S2T
 data:
   dataset_name: vsl-edu
-  zip_file: /kaggle/working/vsl-edu.ziph4ry2c6atmp
+  zip_file: /kaggle/working/vsl-edu.zip
   train: /kaggle/input/vsl-edu-labels/myVSL.train
   dev: /kaggle/input/vsl-edu-labels/myVSL.dev
   test: /kaggle/input/vsl-edu-labels/myVSL.test
