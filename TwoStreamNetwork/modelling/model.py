@@ -83,8 +83,8 @@ class SignLanguageModel(torch.nn.Module):
             model_outputs = self.recognition_network(is_train=is_train, **recognition_inputs)
             model_outputs['total_loss'] = model_outputs['recognition_loss']            
         elif self.task=='G2T':
-            model_outputs = self.translation_network(**translation_inputs)
-            model_outputs['total_loss'] = model_outputs['recognition_loss']
+            model_outputs = self.translation_network(is_train=is_train, **translation_inputs)
+            model_outputs['total_loss'] = model_outputs['translation_loss']
         elif self.task=='S2T':
             recognition_outputs = self.recognition_network(is_train=is_train, **recognition_inputs)
             mapped_feature = self.vl_mapper(visual_outputs=recognition_outputs)
