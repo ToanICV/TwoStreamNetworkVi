@@ -83,7 +83,6 @@ model:
       pe: true
   TranslationNetwork:
     GlossEmbedding:
-      freeze: true
       gloss2embed_file: /kaggle/working/TwoStreamNetworkVi/TwoStreamNetwork/pretrained_models/pretrained_models_mBart/gloss_embeddings.bin
     GlossTokenizer:
       # gloss2id_file: /kaggle/input/vsl-edu-labels/gloss2ids_vsl.pkl
@@ -93,7 +92,7 @@ model:
       pretrained_model_name_or_path: /kaggle/working/TwoStreamNetworkVi/TwoStreamNetwork/pretrained_models/pretrained_models_mBart/
       pruneids_file: /kaggle/working/TwoStreamNetworkVi/TwoStreamNetwork/pretrained_models/pretrained_models_mBart/map_ids.pkl
       tgt_lang: vi_VN
-    freeze_txt_embed: true
+    freeze_txt_embed: false
     label_smoothing: 0.2
     overwrite_cfg:
       attention_dropout: 0.1
