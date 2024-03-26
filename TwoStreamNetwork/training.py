@@ -168,6 +168,7 @@ if __name__ == "__main__":
         for step, batch in enumerate(train_dataloader):
             model.module.set_train()
             print(f"model: {model}")
+            print(f"batch: {batch}")
             output = model(is_train=True, **batch)
 
             with torch.autograd.set_detect_anomaly(True):           
