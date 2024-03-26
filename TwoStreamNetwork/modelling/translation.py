@@ -192,9 +192,9 @@ class TranslationNetwork(torch.nn.Module):
         #print(output_dict.keys()) loss, logits, past_key_values, encoder_last_hidden_state
         log_prob = torch.nn.functional.log_softmax(output_dict['logits'], dim=-1)  # B, T, L
         batch_loss_sum = self.translation_loss_fun(log_probs=log_prob,targets=kwargs['labels'])
-        print(f"output_dict #1: {output_dict}")
+        print(f"output_dict #1: {output_dict}, keys: {output_dict.keys()}")
         output_dict['translation_loss'] = batch_loss_sum/log_prob.shape[0]
-        print(f"output_dict #2: {output_dict}")
+        print(f"output_dict #2: {output_dict}, keys: {output_dict.keys()}")
         output_dict['transformer_inputs'] = kwargs #for later use (decoding)
         return output_dict
 
