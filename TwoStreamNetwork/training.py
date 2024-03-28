@@ -62,9 +62,9 @@ def evaluate_and_save(model, optimizer, scheduler, val_dataloader, cfg,
         output_file=os.path.join(cfg['training']['model_dir'],'ckpts',tag+'.ckpt'),
         epoch=epoch, global_step=global_step,
         current_score=score)
-
-    if best_score==score:
-        os.system('cp {} {}'.format(ckpt_file, os.path.join(cfg['training']['model_dir'],'ckpts','best.ckpt')))
+    # save the best model
+    # if best_score==score:
+    #     os.system('cp {} {}'.format(ckpt_file, os.path.join(cfg['training']['model_dir'],'ckpts','best.ckpt')))
     if ckpt_queue.full():
         to_delete = ckpt_queue.get()
         try:
