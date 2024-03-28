@@ -38,7 +38,7 @@ training:
   model_dir: experiments/outputs/SingleStream/vsl-edu_s2g
   shuffle: True
   num_workers: 1
-  batch_size: 4 
+  batch_size: 2 
   total_epoch: 40
   keep_last_ckpts: 1
   validation: 
