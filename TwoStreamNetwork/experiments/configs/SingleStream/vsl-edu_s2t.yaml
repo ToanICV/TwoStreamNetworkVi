@@ -98,7 +98,7 @@ model:
       attention_dropout: 0.1
       dropout: 0.3
     pretrained_model_name_or_path: /kaggle/working/TwoStreamNetworkVi/TwoStreamNetwork/pretrained_models/pretrained_models_mBart/ 
-    # load_ckpt: experiments/outputs/SingleStream/csl-daily_g2t/ckpts/step_1000.ckpt
+    load_ckpt: experiments/outputs/SingleStream/vsl-edu_g2t/best.ckpt
   VLMapper:
     freeze: false
     type: embedding

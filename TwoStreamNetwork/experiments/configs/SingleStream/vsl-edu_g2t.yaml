@@ -1,10 +1,10 @@
 task: G2T
 data:
   dataset_name: vsl-edu
-  zip_file: /kaggle/working/vsl-edu.zip
-  train: /kaggle/input/vsl-edu-labels/myVSL.train
-  dev:  /kaggle/input/vsl-edu-labels/myVSL.dev
-  test: /kaggle/input/vsl-edu-labels/myVSL.test
+  zip_file: /content/vsl-edu.zip
+  train: /content/myVSL.train
+  dev:  /content/myVSL.dev
+  test: /content/myVSL.test
   input_data: gloss
   level: word
   max_sent_length: 400
@@ -16,8 +16,8 @@ testing:
       max_length: 500
       num_beams: 5
 training:
-  batch_size: 8
-  keep_last_ckpts: 20
+  batch_size: 4
+  keep_last_ckpts: 2
   model_dir: experiments/outputs/SingleStream/vsl-edu_g2t
   num_workers: 4
   optimization:
@@ -47,20 +47,20 @@ model:
   TranslationNetwork:
     GlossEmbedding:
       freeze: true
-      gloss2embed_file: /kaggle/working/TwoStreamNetworkVi/TwoStreamNetwork/pretrained_models/pretrained_models_mBart/gloss_embeddings.bin
+      gloss2embed_file: /content/TwoStreamNetworkVi/TwoStreamNetwork/pretrained_models/pretrained_models_mBart/gloss_embeddings.bin
     GlossTokenizer:
-      gloss2id_file: /kaggle/working/TwoStreamNetworkVi/TwoStreamNetwork/pretrained_models/pretrained_models_mBart/gloss2ids.pkl
+      gloss2id_file: /content/TwoStreamNetworkVi/TwoStreamNetwork/pretrained_models/pretrained_models_mBart/gloss2ids.pkl
       src_lang: vi_VSL
     TextTokenizer:
-      pretrained_model_name_or_path: /kaggle/working/TwoStreamNetworkVi/TwoStreamNetwork/pretrained_models/pretrained_models_mBart/
-      pruneids_file: /kaggle/working/TwoStreamNetworkVi/TwoStreamNetwork/pretrained_models/pretrained_models_mBart/map_ids.pkl
+      pretrained_model_name_or_path: /content/TwoStreamNetworkVi/TwoStreamNetwork/pretrained_models/pretrained_models_mBart/
+      pruneids_file: /content/TwoStreamNetworkVi/TwoStreamNetwork/pretrained_models/pretrained_models_mBart/map_ids.pkl
       tgt_lang: vi_VN
     freeze_txt_embed: true
     label_smoothing: 0.2
     overwrite_cfg:
       attention_dropout: 0.1
       dropout: 0.3
-    pretrained_model_name_or_path: /kaggle/working/TwoStreamNetworkVi/TwoStreamNetwork/pretrained_models/pretrained_models_mBart/
+    pretrained_model_name_or_path: /content/TwoStreamNetworkVi/TwoStreamNetwork/pretrained_models/pretrained_models_mBart/
   VLMapper:
     freeze: false
     type: embedding

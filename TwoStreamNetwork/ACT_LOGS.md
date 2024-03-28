@@ -31,7 +31,7 @@
     6. [ ] Training on Kaggle: https://www.kaggle.com/code/toandaoicv/singlestreamsignlanguagetranslation/edit/run/166821736
         6.1. [x] Prune mBART Embedding & Add Gloss Embeddings:https://colab.research.google.com/drive/11NdMrUN6pdOAWm84fH_EnjREDw37Bk52?authuser=1#scrollTo=MSQ7zkGsjksC&uniqifier=1
 
-    7. Fix lỗi missing translation_los của model 
+    7. Fix lỗi missing translation_loss của model 
     Thêm vào class Seq2SeqLMOutput(ModelOutput) ở trong file có địa chỉ tương ứng với: 
     1. C:\Users\ADMIN\AppData\Local\Programs\Python\Python38\Lib\site-packages\transformers\modeling_outputs.py
     2. /usr/local/lib/python3.10/dist-packages/transformers/modeling_outputs.py
